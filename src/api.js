@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const API_Key = '129319023120391239';
+const API_Key = '';
 
 const API = axios.create({
 	baseURL: 'https://api.fivem.design/proxys',

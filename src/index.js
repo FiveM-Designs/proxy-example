@@ -4,20 +4,20 @@ const {
 	fetchProxyInstances,
 	createProxyInstance,
 	deleteProxyInstance,
-	editProxyInstance,
 } = require('./functions');
 
 fetchProxyInstances()
 	.then(({ data }) => {
-		console.log(data.instances);
+		console.log(data);
 	})
 	.catch((err) =>
 		console.log('Unexpected error while trying to fetch proxy instances.')
 	);
 
 createProxyInstance({
-	origin: 'vast.fivem.design', // Must have a valid record.
-	source: '12039.123123.12312.12', // The product IP.
+	origin: 'hamz.fivem.design', // Must have a valid record.
+	source: '12039.123123.12312.12', // The product instance IP. You can access window.origin to show the correct data on the subdomain.
+	port: '80', // Not required.
 })
 	.then(({ data }) => {
 		console.log(data);
@@ -27,24 +27,8 @@ createProxyInstance({
 	);
 
 deleteProxyInstance({
-	instanceId: '123123',
+	instanceId: '63b8c6d1eee2fcf5e6d039f1',
 })
-	.then(({ data }) => {
-		console.log(data);
-	})
-	.catch((err) =>
-		console.log('Unexpected error while trying to delete proxy instances.')
-	);
-
-editProxyInstance(
-	{
-		instanceId: '123123',
-	},
-	{
-		origin: 'vast.fivem.design', // Must have a valid record.
-		source: '12039.123123.12312.12', // The product IP.
-	}
-)
 	.then(({ data }) => {
 		console.log(data);
 	})

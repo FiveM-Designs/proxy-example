@@ -12,16 +12,8 @@ const deleteProxyInstance = (data) => {
 	return API.post('/delete', data);
 };
 
-const editProxyInstance = (params, updated) => {
-	return API.post('/edit', {
-		...params,
-		updated,
-	});
-};
-
 module.exports = {
 	deleteProxyInstance,
 	fetchProxyInstances,
 	createProxyInstance,
-	editProxyInstance,
 };
